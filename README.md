@@ -1,6 +1,6 @@
 # Anima
 
-> 
+Repository for https://anima.ceceppa.me/
 
 ## Development
 

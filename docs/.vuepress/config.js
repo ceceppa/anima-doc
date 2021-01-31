@@ -56,6 +56,8 @@ module.exports = {
             '',
             'anima',
             'anima-node',
+            'anima-tween',
+            'anima-node-properties',
             'custom-animations',
           ]
         }

@@ -34,18 +34,16 @@ anima.play()
 - [with(animation_data: Dictionary)](#with-parallel-animations)
 - [clear()](#clear)
 - [get_length()](#get-length)
-- [hide_strategy(strategy)](#hide_strategy)
+- [hide_strategy(strategy)](#hide-strategy)
 - [play()](#play)
-- [play_with_delay(delay)](#play_with_delay)
+- [play_with_delay(delay)](#play-with-delay)
 - [stop()](#stop)
 
-## Reference
-
-### animation_data
+## animation_data
 
 The biggest difference between Anima and the Godot Tween is that you need to pass a Dictionary, instead a list of arguments.
 
-#### Why?
+### Why?
 
 Because due to its flexibility, Anima does support 12 different options, and most of them are optional. So, having a list of arguments would have been too complicated to remember each of them's position.
 
@@ -63,13 +61,13 @@ So, for this reason, Anima accepts a dictionary whose values are easy to remembe
 |delay|float|No|The animation delay. You can also use negative values to anticipate a sequential/parallel animation|
 |[easing](#easing)|Anima.EASING|No|The easing to use. _Default: LINEAR_|
 |[easing_points](#easing-points)|Array|No|The four easing points to use for the bezier curve|
-|pivot|Anima.PIVOT|No|The pivot point|
+|[pivot](#pivot)|Anima.PIVOT|No|The pivot point|
 |[hide_strategy](#hide-strategy)|Anima.Visibility|No|Allows to specify the `hide_strategy` for a single node|
-|on_completed|Funcref|No|The function to call once an animation is completed|
+|[on_completed](#on-completed)|Funcref|No|The function to call once an animation is completed|
 
 \* You can only use one of the key at the time
 
-#### animation
+### animation
 
 This parameter is the animation name to use. For the built-in animations you can specify the name space separated, camel case, or _ separated, for example:
 
@@ -81,7 +79,7 @@ This parameter is the animation name to use. For the built-in animations you can
 { animation = "bouncing_in" }
 ```
 
-#### property
+### property
 
 You can pass any node property you want to animate like you would with a Tween.
 Because Controls and Node2D nodes have slightly different names for the same properties, Anima provides some additional properties that are node type independent.
@@ -107,7 +105,7 @@ So, if you want to animate the "scale" and want to make the animation work for b
 
 It will animate the "rect_scale" property for Control nodes and "scale" for the Node2D ones.
 
-#### relative
+### relative
 
 If set to `true` the *from* and *to* value will be calculated from the corresponding value of the node when the animation is executed*.
 
@@ -115,7 +113,7 @@ Let's have a look at the following grid:
 
 ![Grid](../images/grid.png)
 
-##### relative = false
+#### relative = false
 Suppose we want to animate the Green square. If we do:
 
 ```gdscript
@@ -130,7 +128,7 @@ The final position will be:
 This because we specified specified the global final position. Also, if we play the animation again
 the node won't move and stays in the same position.
 
-##### relative = true
+#### relative = true
 
 Let's animate now the node according to its relative position:
 
@@ -163,7 +161,7 @@ anima.play()
 
 and play the animation, we will see its position being animated from (1, 2) to its original position (2, 3).
 
-#### easing
+### easing
 
 Here the list of the built-in easings:
 
@@ -204,16 +202,63 @@ Here the list of the built-in easings:
 
 Have a look to [this site](https://easings.net/) to see the difference between each of them
 
-#### easing_points
+### easing_points
 
 This allows you to pass custom points to the cubic bezier.
 You can use this website to generate your own: [https://cubic-bezier.com](https://cubic-bezier.com)
 
-##### Example
+#### Example
 
 ```gdcsript
 then( { node = $node1, easing_points = [1, 0.15, 0, 0.14]} )
 ```
+
+### pivot
+
+Sets the pivot point. Godot does not support pivot point for Node2D nodes yet, so Anima uses a hacky way to simulate them.
+
+Supported pivot points:
+
+- CENTER
+- CENTER_BOTTOM
+- TOP_CENTER
+- TOP_LEFT
+- LEFT_BOTTOM
+- RIGHT_BOTTOM
+
+### on_completed
+
+The callback to invoke when the single node animation completes.
+
+#### Syntax
+
+`on_completed = [Funcref, [params]]`
+
+|Parameter|Description|
+|---|---|
+|FuncRef|A Godot [funcref](https://docs.godotengine.org/en/stable/classes/class_funcref.html)|
+|params|(Optional) An array of params to pass to the callback|
+
+#### Example
+
+```gdscript
+_animation = Anima.begin(self, 'sequence_callback')
+_animation.then({ node = $Button1, animation = "flash", duration = 1, on_completed = [funcref(self, '_on_button_completed'), [1]] })
+_animation.then({ node = $Button2, animation = "tada", duration = 1, on_completed = [funcref(self, '_on_button_completed'), [2]] })
+_animation.then({ node = $Button3, animation = "shakeX", duration = 1, on_completed = [funcref(self, '_on_button_completed'), [3]] })
+
+
+func _on_button_completed(index: int) -> void:
+  print(index)
+```
+
+When the animation of each $Button1, $Button2, $Button3 node completed the `_on_button_completed` will be called with the corresponding parameter:
+
+1. _$Button1_ completes --> `_on_button_completed(1)` is executed
+1. _$Button2_ completes --> `_on_button_completed(2)` is executed
+1. _$Button3_ completes --> `_on_button_completed(3)` is executed
+
+## Reference
 
 ### then (sequential animations)
 
@@ -293,7 +338,7 @@ anima.get_length()
 
 ### hide_strategy
 
-This method allows hiding all the nodes that are going to be animated when the animation hasn't started yet.
+This method allows hiding all the nodes that will be animated when the animation hasn't started yet.
 Let's have a look at the following gif:
 
 ![Hide strategy](../images/hide_strategy.gif)
@@ -304,7 +349,7 @@ we have three elements:
 2. Text
 3. Button
 
-For this kind of animation, we want all of them hidden when the animation has not started yet.
+We want all of them hidden for this kind of animation when the animation has not started yet.
 A simple solution can hide them in the editor; it works. But I always end up forgetting to re-hide stuff after doing some test.
 So this method is useful to avoid this kind of distraction, as we can specify, during the creation of the animation, that we want hide :)
 
