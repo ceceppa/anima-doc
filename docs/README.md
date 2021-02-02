@@ -1,6 +1,6 @@
 ---
 home: true
-tagline: Create rich animated UI in Godot
+tagline: Rich animations in Godot made easy
 actionText: Get Started →
 actionLink: /doc/
 features:
