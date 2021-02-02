@@ -7,7 +7,7 @@ In Godot different node uses different property names for the same property, for
 
 So, this utility class helps Anima to figure out which property to animate given a property name :)
 
-You can use the class methods to make your code work with any CanvasItem, without worrying about the difference of names.
+You can use the class methods to make your code work with any Node without worrying about the difference of names.
 
 ## Get methods
 

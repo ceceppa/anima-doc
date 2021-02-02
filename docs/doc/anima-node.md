@@ -51,7 +51,7 @@ So, for this reason, Anima accepts a dictionary whose values are easy to remembe
 
 |Key|Type|Required|Description|
 |---|---|---|---|
-|node|CanvasItem|Yes|The node you want to animate|
+|node|Node|Yes|The node you want to animate|
 |[animation](#animation)|String|Yes/No*|The animation to apply|
 |[property](#property)|String|Yes/No*|The property to animate|
 |from|Variant|No|The initial value, if omitted the current node property value will be used|
@@ -82,22 +82,23 @@ This parameter is the animation name to use. For the built-in animations you can
 ### property
 
 You can pass any node property you want to animate like you would with a Tween.
-Because Controls and Node2D nodes have slightly different names for the same properties, Anima provides some additional properties that are node type independent.
+Because different Nodes uses slightly different names for the same properties, Anima provides some additional properties that are node type independent.
 
-|Anima property|Type|Control|Node2D|Description|
-|---|---|---|---|---|
-|x|float|Yes|Yes|This is equivalent to "rect_position:x" for Control nodes, and "global_position:x" for Node2D ones|
-|position:x|float|Yes|Yes|This is equivalent to "x"|
-|y|float|Yes|Yes|This is equivalent to "rect_position:y" for Control nodes, and "global_position:y" for Node2D ones|
-|position:x|float|Yes|Yes|This is equivalent to "y"|
-|position|Vector2|Yes|Yes|This is equivalent to "rect_position" for Control nodes, and "global_position" for Node2D ones|
-|opacity|float|Yes|Yes|This will animate the alpha channel of the node modulate property|
-|rotation|float|Yes|Yes|Rotation in degrees, equivalent to "rect_rotation" for Control nodes, and "rotation_degrees" for the Node2D ones|
-|skew:x|float|No|Yes|Simulate the skewX effect by modifying the get_global_transform().y.x value|
-|skew:y|float|No|Yes|Simulate the skewY effect by modifying the get_global_transform().x.y value|
+|Anima property|Type|Control|Node2D|Spatial|Description|
+|---|---|---|---|---|---|
+|x|float|Yes|Yes|Yes|This is equivalent to "rect_position:x" for Control nodes, and "global_position:x" for Node2D ones|
+|position:x|float|Yes|Yes|Yes|This is equivalent to "x"|
+|y|float|Yes|Yes|Yes|This is equivalent to "rect_position:y" for Control nodes, and "global_position:y" for Node2D ones|
+|position:x|float|Yes|Yes|Yes|This is equivalent to "y"|
+|position|Vector2 / Vector3|Yes|Yes|Vector3|This is equivalent to "rect_position" for Control nodes, and "global_position" for Node2D ones|
+|opacity|float|Yes|Yes|No|This will animate the alpha channel of the node modulate property|
+|rotation|float|Yes|Yes|Yes|Rotation in degrees, equivalent to "rect_rotation" for Control nodes, "rotation_degrees" for Node2D and "rotation" for Spatial ones|
+|skew:x|float|No|Yes|No|Simulate the skewX effect by modifying the get_global_transform().y.x value|
+|skew:y|float|No|Yes|No|Simulate the skewY effect by modifying the get_global_transform().x.y value|
+|shader_param:[param_name]|Varian|No|No|Yes|The shader parameter to update.Example `shader_param:albedo` calls "set_shader_param('albedo', [value of the current frame])"|
 
 **NOTE** To make your animation Node type independent Anima will try to prepend the "rect_" attribute for you.
-So, if you want to animate the "scale" and want to make the animation work for both Control and Node2D, you can just:
+So, if you want to animate the "scale" and want to make the animation work for both *Control* and *Node2D*, you can just:
 
 ```gdscript
 { property = "scale" }
