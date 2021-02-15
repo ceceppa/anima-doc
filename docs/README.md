@@ -1,6 +1,7 @@
 ---
 home: true
 tagline: Rich animations in Godot made easy
+heroImage: https://anima.ceceppa.me/anima.gif
 actionText: Get Started →
 actionLink: /doc/
 features:
