@@ -28,6 +28,40 @@ anima.then({ node = $node, animation = "tada", duration = 0.7 })
 anima.play()
 ```
 
+## Signals
+
+### animation_started
+
+Emitted when the animation or loop starts
+
+```gdscript
+signal animation_started
+```
+
+### animation_completed
+
+Emitted when the animation or loop starts
+
+```gdscript
+signal animation_completed
+```
+
+### loop_started
+Emitted a loop starts
+
+```gdscript
+signal loop_started(loop_count: int)
+```
+
+### loop_completed
+
+Emitted a loop completes
+
+```gdscript
+signal loop_completed(loop_count: int)
+```
+
+
 ## Methods
 
 - [then(animation_data: Dictionary)](#then-sequential-animations)
@@ -38,6 +72,7 @@ anima.play()
 - [play()](#play)
 - [play_with_delay(delay)](#play-with-delay)
 - [stop()](#stop)
+- [set_loop_strategy()](#set-loop-strategy)
 
 ## animation_data
 
@@ -45,7 +80,7 @@ The biggest difference between Anima and the Godot Tween is that you need to pas
 
 ### Why?
 
-Because due to its flexibility, Anima does support 12 different options, and most of them are optional. So, having a list of arguments would have been too complicated to remember each of them's position.
+Because due to its flexibility, Anima does support 14 different options, and most of them are optional. So, having a list of arguments would have been too complicated to remember each position.
 
 So, for this reason, Anima accepts a dictionary whose values are easy to remember and straightforward:
 
@@ -63,6 +98,7 @@ So, for this reason, Anima accepts a dictionary whose values are easy to remembe
 |[easing_points](#easing-points)|Array|No|The four easing points to use for the bezier curve|
 |[pivot](#pivot)|Anima.PIVOT|No|The pivot point|
 |[hide_strategy](#hide-strategy)|Anima.Visibility|No|Allows to specify the `hide_strategy` for a single node|
+|[on_started](#on-started)|Funcref|No|The function to call when the animation starts|
 |[on_completed](#on-completed)|Funcref|No|The function to call once an animation is completed|
 
 \* You can only use one of the key at the time
@@ -227,6 +263,37 @@ Supported pivot points:
 - LEFT_BOTTOM
 - RIGHT_BOTTOM
 
+### on_started
+
+The callback to invoke when the single node animation completes.
+
+#### Syntax
+
+`on_started = [Funcref, [params]]`
+
+|Parameter|Description|
+|---|---|
+|FuncRef|A Godot [funcref](https://docs.godotengine.org/en/stable/classes/class_funcref.html)|
+|params|(Optional) An array of params to pass to the callback|
+
+#### Example
+
+```gdscript
+_animation = Anima.begin(self, 'sequence_callback')
+_animation.then({ node = $Button1, animation = "flash", duration = 1, on_started = [funcref(self, '_on_button_started'), [1]] })
+_animation.then({ node = $Button2, animation = "tada", duration = 1, on_started = [funcref(self, '_on_button_started'), [2]] })
+_animation.then({ node = $Button3, animation = "shakeX", duration = 1, on_started = [funcref(self, '_on_button_started'), [3]] })
+
+func _on_button_started(index: int) -> void:
+  print(index)
+```
+
+When the animation of each $Button1, $Button2, $Button3 node completed the `_on_button_started` will be called with the corresponding parameter:
+
+1. _$Button1_ starts --> `_on_button_started(1)` is executed
+1. _$Button2_ starts --> `_on_button_started(2)` is executed
+1. _$Button3_ starts --> `_on_button_started(3)` is executed
+
 ### on_completed
 
 The callback to invoke when the single node animation completes.
@@ -247,7 +314,6 @@ _animation = Anima.begin(self, 'sequence_callback')
 _animation.then({ node = $Button1, animation = "flash", duration = 1, on_completed = [funcref(self, '_on_button_completed'), [1]] })
 _animation.then({ node = $Button2, animation = "tada", duration = 1, on_completed = [funcref(self, '_on_button_completed'), [2]] })
 _animation.then({ node = $Button3, animation = "shakeX", duration = 1, on_completed = [funcref(self, '_on_button_completed'), [3]] })
-
 
 func _on_button_completed(index: int) -> void:
   print(index)
@@ -296,7 +362,7 @@ The `with` method allows you to specify the animations to be played in parallel.
 #### Syntax
 
 ```gdscript
-`with`( animation_data: Dictionary )
+with( animation_data: Dictionary )
 ```
 
 #### Example
@@ -386,6 +452,52 @@ func _ready():
 	anima.play_with_delay(0.5)
 ```
 
+### loop
+
+Loops the animation given `times`
+
+**NOTE**: By default Anima will not re-calculate the relative data. See [set_loop_strategy](#set-loop-strategy) for more information.
+
+#### Syntax
+
+```gdscript
+anima.loop(times: int = -1)
+```
+
+|Param|Type|Description|
+|---|---|---|
+|times|int|Number of loops to execute. Use `-1` to have an infinite loop.|
+
+### loop\_with\_delay
+
+Loops the animation given `times` with a interval of `seconds` between each loop
+
+#### Syntax
+
+```gdscript
+anima.play_with_delay(delay: float, times: int)
+```
+
+|Param|Type|Description|
+|---|---|---|
+|delay|float|Delay before starting a new loop. **NOTE** it is not applied for the first loop|
+|times|int|Number of loops to execute. Use `-1` to have an infinite loop.|
+
+#### Example
+
+```gdscript
+var anima = Anima.begin(self, 'sequence_and_parallel')
+anima.then({ node = $Panel, animation = 'scale_y', duration = 0.3 })
+anima.then({ node = $Panel/MarginContainer/Label, animation = 'typewrite', duration = 0.05 })
+anima.then({ node = $Panel/CenterContainer/Button, animation = 'tada', duration = 0.5, delay = -0.5 })
+
+anima.set_visibility_strategy(Anima.Visibility.TRANSPARENT_ONLY)
+
+anima.loop_with_delay(0.5, 5)
+```
+
+Loops the animation _5_ times and applies a delay of 0.5 seconds from the 2nd loop.
+
 ### play
 
 Plays the entire animation
@@ -397,7 +509,7 @@ anima.play()
 ```
 
 
-### play_with_delay
+### play\_with\_delay
 
 Plays the entire animation after the specified delay has occurred.
 
@@ -423,7 +535,6 @@ anima.play_with_delay(0.5)
 
 Plays the animation after 0.5 seconds.
 
-
 ### stop
 
 Stops the entire animation
@@ -434,3 +545,47 @@ Stops the entire animation
 anima.stop()
 ```
 
+### set\_loop\_strategy
+
+Set what to do when a new loop starts
+
+#### Syntax
+
+```gdscript
+set_loop_strategy(strategy: int)
+```
+
+|Strategy|Description|
+|---|---|
+|Anima.LOOP.USE_EXISTING_RELATIVE_DATA|(Default) Repeats the animation as it is, all the relative data calculated stays the same|
+|Anima.LOOP.RECALCULATE_RELATIVE_DATA|Re-calculate the relative data before starting the animation again|
+
+To understand the difference between those two properties, let's consider the following code:
+
+```gdscript
+var anima = Anima.begin(self)
+anima.then({ node = $Node, to = 10, relative = true, property = "position:x" })
+```
+
+We asked Anima to animate the X position of 10 pixels from its relative position. Suppose its starting position is `Vector2(30, 7)`, then at the end of the 1st loop, the node X position will be `Vector2(30, 17)`.
+
+#### USE_EXISTING_RELATIVE_DATA
+
+The relative data is only calculated once. This means that if we animate a node relative to its current property when the new loop starts, we will use the same initial and final value.
+
+So, looking at the example above, Anima resets the Node position to its initial value `Vector2(30, 7)`. And at the end of the loop, the final position will be once again `Vector2(30, 17)`
+
+#### RECALCULATE_RELATIVE_DATA
+
+This strategy recalculates the relative data before starting the new loop.
+
+So, looking at the example above, we'll have:
+
+|Loop|Initial position|Final position|
+|---|---|---|
+|1|Vector2(30, 7)|Vector2(30, 17)|
+|2|Vector2(30, 17)|Vector2(30, 27)| 
+|3|Vector2(30, 27)|Vector2(30, 37)|
+|...n|Vector2(30, n - 1)|Vector2(30, (n - 1) + 10)|
+
+As you can see using this strategy keeps incrementing the fina value indefinitely.

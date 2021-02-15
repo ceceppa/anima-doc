@@ -28,7 +28,7 @@ Sets the pivot point for Control and Node2D nodes.
 func set_pivot(node: CanvasItem, pivot: Anima.PIVOT) -> void:
 ```
 
-## get_property_initial_value
+## get\_property\_initial\_value
 
 Returns the current property value of the node
 

@@ -56,6 +56,7 @@ module.exports = {
             '',
             'anima',
             'anima-node',
+            'anima-grid',
             'anima-tween',
             'anima-node-properties',
             'custom-animations',

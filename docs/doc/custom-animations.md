@@ -37,7 +37,7 @@ The full example will look like:
 
 ```gdscript
 func init():
-	Anima.register_animation(self, 'move_and_rotate')
+  Anima.register_animation(self, 'move_and_rotate')
 
   var anima := Anima.begin(self)
   anima.then({ node = $node, animation = "move_and_slide", duration = 1 })
@@ -52,8 +52,8 @@ func generate_animation(anima_tween: AnimaTween, data: Dictionary) -> void:
     { from = 0, to 360, easing = Anima.EASING.EASE_IN_OUT }
   ]
 
-	anima_tween.add_relative_frames(data, "x", x_frames)
-	anima_tween.add_frames(data, "rotation", rotate_frames)
+  anima_tween.add_relative_frames(data, "x", x_frames)
+  anima_tween.add_frames(data, "rotation", rotate_frames)
 ```
 
 In the example, we use `add_relative_frames` for the **x** position, as we don't want to specify absolute X position, but we want it relative to the node one.
@@ -76,3 +76,10 @@ This is equivalent to:
 ```
 
 So, suppose your animation has only an initial and final value. In that case, you can omit the `percentage` attribute and write everything as a single frame.
+
+## Multiple Animations
+
+
+```
+	if data.animation == '3dboxes':
+```
