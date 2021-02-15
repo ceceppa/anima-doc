@@ -6,9 +6,9 @@ Once activated, the addon will add the Anima singleton class to your project. Th
 
 Anima provides those additional nodes:
 
-- [AnimaNode](/doc/anima-node), used to handle the setup of all the animations supported by the addon
-- [AnimaGrid](/doc/anima-grid), used to handle the setup of all the animations for your group/grids
-- [AnimaTween](/doc/anima-tween), is the custom Tween used that allows the magic to happen :)
+- [AnimaNode](/doc/anima-node.html), used to handle the setup of all the animations supported by the addon
+- [AnimaGrid](/doc/anima-grid.html), used to handle the setup of all the animations for your group/grids
+- [AnimaTween](/doc/anima-tween.html), is the custom Tween used that allows the magic to happen :)
 
 ## Syntax
 
