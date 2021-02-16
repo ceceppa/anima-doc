@@ -196,7 +196,8 @@ But the most significant difference is how the various animations are created an
 	anima.then({ node = $Panel/CenterContainer/Button, animation = 'button_animation', duration = 0.5, delay = -0.5 })
 ```
 
-With Anima sequential animations are affected by the previous ones. So, the `typewrite` animation is delayed by the duration of the `scale_y` and the `button_animation` one by the duration of `scale_y` + `typewrite` one.
+With Anima sequential animations are affected by the previous ones. So, the `typewrite` animation is delayed by the duration of the `scale_y` and the `button_animation` by the `scale_y` + `typewrite` one.
+
 This means that changing the duration of one of them will automatically impact the delay of the subsequent sequential animations.
 
 #### Godot
@@ -222,7 +223,7 @@ This means that changing the duration of one of them will automatically impact t
 	tween.interpolate_property($Panel/CenterContainer/Button, 'rotation_degrees', 3, 0, button_rotate_frame5_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, button_rotate_frame5_delay )
 ```
 
-Here the situation got more complicated as, at the moment, there is no built-in support for chaining, and so it needs to be done manually.
+Here the situation got more complicated as, at the moment, there is no built-in support for chaining, and so it needs to be done manually by playing with delays.
 
 Chaining the animation for Panel and Label is relatively easy. But the button shaking animation is more tricky as its composed of different frames and type of animations that are depend on the previous ones.
 To make it more maintainable, you can do something like that:

@@ -18,7 +18,8 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['script', { src: 'https://plausible.io/js/plausible.js', "data-domain": "anima.ceceppa.me", defer: true, async: true }]
   ],
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
