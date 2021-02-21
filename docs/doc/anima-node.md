@@ -86,9 +86,14 @@ So, for this reason, Anima accepts a dictionary whose values are easy to remembe
 
 |Key|Type|Required|Description|
 |---|---|---|---|
-|node|Node|Yes|The node you want to animate|
-|[animation](#animation)|String|Yes/No*|The animation to apply|
-|[property](#property)|String|Yes/No*|The property to animate|
+|node|Node*|Yes/No*|The single node you want to animate|
+|[group](#group)|Node|Yes/No*|The group you want to animate|
+|[grid](#grid)|Node|Yes/No*|The grid you want to animate|
+|[animation](#animation)|String|Yes/No*\*|The animation to apply|
+|[animation_type](#animation-type)|String|No|The grid group animation type|
+|[grid_size](#grid-size)|Vector2|Yes (for grid only)|The grid size|
+|[items_delay](#items-delay)|float|No|The incremental delay to apply for each element of the grid/group|
+|[property](#property)|String|Yes/No*\*|The property to animate|
 |from|Variant|No|The initial value, if omitted the current node property value will be used|
 |to|Variant|Yes/No|The final value. Required **only** if you're passing the "property" key|
 |[relative](#relative)|boolean|No|If true, the from and to value are applied according to the current node property value. (See example for more info)|
@@ -101,7 +106,109 @@ So, for this reason, Anima accepts a dictionary whose values are easy to remembe
 |[on_started](#on-started)|Funcref|No|The function to call when the animation starts|
 |[on_completed](#on-completed)|Funcref|No|The function to call once an animation is completed|
 
-\* You can only use one of the key at the time
+\* One of the three key is required: node, grid or group
+
+\** You can only use one of the key at the time
+
+
+### group
+
+This method is used to animate all the direct child of the node specified.
+
+So, suppose you have three buttons as a child of a VBoxContainer. You want to animate all of them in sequence using the same animation. In this case, the `group` method is the perfect choice for you, as it
+allows you to specify the group and the animation to use for each direct child of it.
+
+#### Syntax
+
+```gdscript
+then({ group = $Group, items_delay = float })
+```
+
+|Parameter|Type|Description|
+|---|---|---|
+|group|Node|The node of whom children we want to animate|
+|items_delay|float|(Optional) the incremental delay to apply for each child of the group|
+
+#### Example:
+
+```gdscript
+
+# VBoxContainer
+#   |-> Button1
+#   |-> Button2
+#   |-> Button3
+var anima := Anima.begin($VBoxContainer)
+
+anima.then( { group = $VBoxContainer, items_delay = 0.3, property = "opacity", from = 0, to = 1 })
+anima.play()
+```
+
+The following example will animate the three child node of the `VBoxContainer`, Button1, Button2 and Button3.
+The animation of each child node will be delayed of 0.3 seconds between each other, so:
+
+1. Button1 -> delay = 0
+2. Button2 -> delay = 0.3
+3. Button3 -> delay = 0.6
+
+### grid
+
+This method is used to treat all the node's direct child as part of a grid, and animate them accordingly
+
+#### Syntax
+
+```gdscript
+then({ grid = Node, grid_size = Vector2 })
+```
+
+|Parameter|Type|Description|
+|---|---|---|
+|grid|Node|The node of whom children we want to animate|
+|grid_size|Vector2|The size of the grid (m * n)|
+|items_delay|float|(Optional) the incremental delay to apply for each child of the grid|
+
+#### Example:
+
+Suppose we have a parent node with nine child button. We can consider them as a node on a grid of 3x3:
+
+![Grid 3x3](../images/grid-3-3.png)
+
+This allows us to animate them using different method of grouping, for example:
+
+- Anima.GRID.ROWS_ODD => Will animate elements in odd rows: B1, B2, B3 and B8, B8, B9
+- Anima.GRID.EVEN => Will animate elements where the sum of their index is even: B1, B3, B5, B7, B9
+
+For more info see [enums](#group-grid)
+
+```gdscript
+var anima := Anima.begin($VBoxContainer)
+
+anima.then({
+  grid = $VBoxContainer,
+  grid_size = Vector2(3, 3),
+  animation_type = Anima.GRID.EVEN,
+  property = "opacity",
+  from = 0,
+  to = 1,
+  duration = 0.3
+})
+
+anima.then({
+  grid = $VBoxContainer,
+  grid_size = Vector2(3, 3),
+  animation_type = Anima.GRID.ODD,
+  property = "opacity",
+  from = 0,
+  to = 1,
+  duration = 0.3
+})
+
+anima.play()
+```
+
+The following example will fade in the elements in the following order:
+
+1. B1, B3, B5, B7, B9
+2. B2, B4, B6, B8
 
 ### animation
 
@@ -141,6 +248,103 @@ So, if you want to animate the "scale" and want to make the animation work for b
 ```
 
 It will animate the "rect_scale" property for Control nodes and "scale" for the Node2D ones.
+
+### animation_type
+
+This parameter allows you to specify the order to animate the elements in the given group/grid.
+
+```gdscript
+enum GRID {
+	TOGETHER,
+	SEQUENCE_TOP_LEFT
+	COLUMNS_ODD,
+	COLUMNS_EVEN,
+	ROWS_ODD,
+	ROWS_EVEN,
+	ODD,
+	EVEN
+}
+```
+_Default:_ SEQUENCE_TOP_LEFT
+
+|Anima.GRID|Description|
+|---|---|---|---|
+|TOGETHER|All the nodes will be animated at the same time|
+|SEQUENCE_TOP_LEFT|The nodes will be animated in order from top left corner to the bottom right|
+|COLUMNS_ODD|Animated only the elements whose grid column is odd|
+|COLUMNS_EVEN|Animated only the elements whose grid column is even|
+|ROW_ODD|Animated only the elements whose grid row is odd|
+|ROW_EVEN|Animated only the elements whose grid row is even|
+|ODD|Animated only the elements whose column + row index is odd|
+|EVEN|Animated only the elements whose column + row index is even|
+
+**NOTE**: A group is considered as a `n x 1` grid, where `n` is the number of nodes.
+
+#### example
+
+```gdscript
+	group1.then({ 
+		grid = $Grid,
+		grid_size = grid_size,
+		animation_type = Anima.GRID.COLUMNS_EVEN,
+		property = "x",
+		to = 5, 
+		relative = true,
+		duration = 0.3,
+		easing = Anima.EASING.EASE_OUT_SINE,
+		items_delay = 0
+	})
+```
+
+animates only the elements whose column index is even, for example:
+
+|Column 1|Column 2|Column 3|
+|---|---|---|
+|[Node 1]|[Node 2]|[Node 3]|
+|[Node 4]|[Node 5]|[Node 6]|
+|[Node 7]|[Node 8]|[Node 8]|
+
+The animation will only be applied to the nodes in column 2: _Node 2_, _Node 5_, _Node 8_
+
+### grid_size
+
+Specifies the grid size. 
+
+
+#### example
+
+```gdscript
+	group1.then({ 
+		grid = $Grid,
+		grid_size = Vector2(3, 3),
+	})
+```
+
+This says that the elements are displaced on a virtual grid of size 3x3.
+
+### items_delay
+
+The incremental delay to apply for each node of the grid/group
+
+#### example
+
+
+```gdscript
+	group1.then({ 
+		group = $Group,
+		items_delay = 0.5
+	})
+```
+
+Suppose our group is composed of 5 elements, the delay applied will be:
+
+|Node|Delay|
+|---|---|
+|Node 1|0.0|
+|Node 2|0.5|
+|Node 3|1.0|
+|Node 4|1.5|
+|Node 5|2.0|
 
 ### relative
 
@@ -589,3 +793,20 @@ So, looking at the example above, we'll have:
 |...n|Vector2(30, n - 1)|Vector2(30, (n - 1) + 10)|
 
 As you can see using this strategy keeps incrementing the fina value indefinitely.
+
+### wait
+
+Adds a delay for the next animation.
+
+#### Syntax
+
+```gdscript
+wait(delay: float)
+```
+
+#### Example
+
+```gdscript
+.wait(0.3) # delays the next animation of 0.3
+```
+
