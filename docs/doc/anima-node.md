@@ -702,6 +702,52 @@ anima.loop_with_delay(0.5, 5)
 
 Loops the animation _5_ times and applies a delay of 0.5 seconds from the 2nd loop.
 
+### loop_backwards
+
+Loops the animation backwards given `times`
+
+**NOTE**: By default Anima will not re-calculate the relative data. See [set_loop_strategy](#set-loop-strategy) for more information.
+
+#### Syntax
+
+```gdscript
+anima.loop_backwards(times: int = -1)
+```
+
+|Param|Type|Description|
+|---|---|---|
+|times|int|Number of loops to execute. Use `-1` to have an infinite loop.|
+
+### loop\_backwards\_with\_delay
+
+Loops the animation backwards given `times` with a interval of `seconds` between each loop
+
+#### Syntax
+
+```gdscript
+anima.play_backwards_with_delay(delay: float, times: int)
+```
+
+|Param|Type|Description|
+|---|---|---|
+|delay|float|Delay before starting a new loop. **NOTE** it is not applied for the first loop|
+|times|int|Number of loops to execute. Use `-1` to have an infinite loop.|
+
+#### Example
+
+```gdscript
+var anima = Anima.begin(self, 'sequence_and_parallel')
+anima.then({ node = $Panel, animation = 'scale_y', duration = 0.3 })
+anima.then({ node = $Panel/MarginContainer/Label, animation = 'typewrite', duration = 0.05 })
+anima.then({ node = $Panel/CenterContainer/Button, animation = 'tada', duration = 0.5, delay = -0.5 })
+
+anima.set_visibility_strategy(Anima.Visibility.TRANSPARENT_ONLY)
+
+anima.loop_backwards_with_delay(0.5, 5)
+```
+
+Loops the animation _5_ times and applies a delay of 0.5 seconds from the 2nd loop.
+
 ### play
 
 Plays the entire animation
@@ -711,7 +757,6 @@ Plays the entire animation
 ```gdscript
 anima.play()
 ```
-
 
 ### play\_with\_delay
 
@@ -738,6 +783,42 @@ anima.play_with_delay(0.5)
 ```
 
 Plays the animation after 0.5 seconds.
+
+### play\_backwards
+
+Plays the entire animation backwards
+
+#### Syntax
+
+```gdscript
+anima.play_backwards()
+```
+
+### play\_backwards\_with\_delay
+
+Plays the entire animation backwards after the specified delay has occurred.
+
+#### Syntax
+
+```gdscript
+anima.play_backwards_with_delay()
+```
+
+
+#### Example
+
+```gdscript
+var anima = Anima.begin(self, 'sequence_and_parallel')
+anima.then({ node = $Panel, animation = 'scale_y', duration = 0.3 })
+anima.then({ node = $Panel/MarginContainer/Label, animation = 'typewrite', duration = 0.05 })
+anima.then({ node = $Panel/CenterContainer/Button, animation = 'tada', duration = 0.5, delay = -0.5 })
+
+anima.set_visibility_strategy(Anima.Visibility.TRANSPARENT_ONLY)
+
+anima.play_backwards_with_delay(0.5)
+```
+
+Plays the animation backwards after 0.5 seconds.
 
 ### stop
 

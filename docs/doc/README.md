@@ -272,7 +272,7 @@ What if you want to emulate one of the easing available with Anima?
 
 Then the situation will get more complicated as you need to use something like:
 
-```
+```gdscript
 tween.interpolate_method(self, '_my_easing', 0.0, 1.0, 0.3)
 
 func _my_easing(elapsed_time: float) -> void:
