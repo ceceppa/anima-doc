@@ -12,7 +12,6 @@ Anima provides those two additional nodes:
 ## Syntax
 
 - [begin(node, animation_name)](#begin)
-- [group(node)](#group)
 - [register_animation(script, animation_name)](#register-animation)
 - [get_available_animations()](#get-available-animations)
 
@@ -53,7 +52,9 @@ enum GRID {
 	ROWS_ODD,
 	ROWS_EVEN,
 	ODD,
-	EVEN
+	EVEN,
+	FROM_CENTER,
+	FROM_POINT
 }
 ```
 

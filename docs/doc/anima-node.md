@@ -91,6 +91,7 @@ So, for this reason, Anima accepts a dictionary whose values are easy to remembe
 |[grid](#grid)|Node|Yes/No*|The grid you want to animate|
 |[animation](#animation)|String|Yes/No*\*|The animation to apply|
 |[animation_type](#animation-type)|String|No|The grid group animation type|
+|[point](#point)|Vector2|No|The starting point used by animation_type == Anima.GRID.FROM_POINT|
 |[grid_size](#grid-size)|Vector2|Yes (for grid only)|The grid size|
 |[items_delay](#items-delay)|float|No|The incremental delay to apply for each element of the grid/group|
 |[property](#property)|String|Yes/No*\*|The property to animate|
@@ -262,7 +263,9 @@ enum GRID {
 	ROWS_ODD,
 	ROWS_EVEN,
 	ODD,
-	EVEN
+	EVEN,
+	FROM_CENTER,
+	FROM_POINT
 }
 ```
 _Default:_ SEQUENCE_TOP_LEFT
@@ -277,6 +280,8 @@ _Default:_ SEQUENCE_TOP_LEFT
 |ROW_EVEN|Animated only the elements whose grid row is even|
 |ODD|Animated only the elements whose column + row index is odd|
 |EVEN|Animated only the elements whose column + row index is even|
+|FROM_CENTER|Animated the group/grid staring from its center|
+|FROM_POINT|Animated the group/grid staring from the specified point|
 
 **NOTE**: A group is considered as a `n x 1` grid, where `n` is the number of nodes.
 
@@ -305,6 +310,32 @@ animates only the elements whose column index is even, for example:
 |[Node 7]|[Node 8]|[Node 8]|
 
 The animation will only be applied to the nodes in column 2: _Node 2_, _Node 5_, _Node 8_
+
+### point
+Specify a starting point within the group/grid from where the animation starts.
+
+
+#### example
+
+```gdscript
+	group1.then({ 
+		grid = $Grid,
+		grid_size = Vector2(5, 5),
+		animation_type = Anima.GRID.POIN,
+		point = Vector2(1, 1)
+		property = "x",
+		to = 5, 
+		relative = true,
+		items_delay = 0.01,
+		duration = 0.3,
+		easing = Anima.EASING.EASE_OUT_SINE,
+		items_delay = 0
+	})
+```
+
+This will animate all the elements in the grid starting from the point (1, 1) and then will propagate to all the other nodes according to their distance from `point`.
+
+See [2D Grid](https://anima.ceceppa.me/demo) or checkout [the code example](https://github.com/ceceppa/anima-demos/blob/main/demos/2DGrid.gd) for more information.
 
 ### grid_size
 

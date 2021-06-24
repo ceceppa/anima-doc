@@ -79,7 +79,37 @@ So, suppose your animation has only an initial and final value. In that case, yo
 
 ## Multiple Animations
 
+You can register multiple animations inside the same script file. For all of them, Anima will always call the `generate_animation` function. So, you can access the `data.animation` property to know which one of the registered ones you have to set up the frames.
 
-```
-	if data.animation == '3dboxes':
+### Example
+
+In the following example, we're going to register two different animations and set up different frame values for each of them:
+
+```gdscript
+func _ready() -> void:
+	Anima.register_animation(self, 'grid_test_in')
+	Anima.register_animation(self, 'grid_test_out')
+
+
+func generate_animation(anima_tween: AnimaTween, data: Dictionary) -> void:
+	var scale_frames := []
+	var modulate_frames := []
+
+	if data.animation == 'grid_test_in':
+		scale_frames = [
+			{ from = Vector2(1, 1), to = Vector2(0, 0) }
+		]
+		modulate_frames = [
+			{ from = Color.white, to = Color(1, 0, 0.49, 0) }
+		]
+	else:
+		scale_frames = [
+			{ from = Vector2(0, 0), to = Vector2(1, 1) }
+		]
+		modulate_frames = [
+			{ from = Color(0.33, 0.66, 0.49, 0), to = Color.white }
+		]
+
+	anima_tween.add_frames(data, 'scale', scale_frames)
+	anima_tween.add_frames(data, 'modulate', modulate_frames)
 ```
