@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Anima documentation</title><link>https://anima.ceceppa.me/</link><description>Recent content on Anima documentation</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Wed, 04 Sep 2024 15:20:16 +0100</lastBuildDate><atom:link href="https://anima.ceceppa.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Built in Animations</title><link>https://anima.ceceppa.me/docs/features/built-in-animations/</link><pubDate>Wed, 04 Sep 2024 15:20:16 +0100</pubDate><guid>https://anima.ceceppa.me/docs/features/built-in-animations/</guid><description>&lt;p>Anima&amp;rsquo;s extensive library of 89 built-in animations empowers you to create dynamic effects for your nodes, groups, and grids.&lt;/p>
+&lt;p>To apply an animation, simply use the &lt;code>anima_animation&lt;/code> method. Provide the animation name and duration as arguments. Here&amp;rsquo;s a quick example:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6ebb05d" class="language-gdscript ">
+ &lt;code>(
+ Anima.Node(self)
+ .anima_animation(&amp;#34;tada&amp;#34;, 0.7)
+ .play()
+)&lt;/code>
+ &lt;/pr</description></item><item><title>Overview</title><link>https://anima.ceceppa.me/docs/overview/</link><pubDate>Wed, 04 Sep 2024 15:08:29 +0100</pubDate><guid>https://anima.ceceppa.me/docs/overview/</guid><description>&lt;p>Anima makes animation accessible to everyone, regardless of skill level. With just a few lines of code and simple syntax, you can effortlessly create sequential and parallel animations. Choose from our extensive library of 89 animations and 33 easing functions, or customize your own to match your vision.&lt;/p>
+&lt;h2 id="custom-nodes">Custom nodes &lt;a href="#custom-nodes" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Anima provides those two additional nodes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://anima.ceceppa.me/docs/animate-node">AnimaNode&lt;/a>, used to handle the setup of all the animations supported by the addon&lt;/li>
+&lt;li>&lt;a href="https://anima.ceceppa.me/docs/anima-tween">AnimaTween&lt;/a>, is the custom Tween used that allows the magic to happen :)&lt;/li>
+&lt;/ul>
+&lt;h2 id="animation-declaration">Animation Declaration &lt;a href="#animation-declaration" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Animation declarations are used to tell anima how to animate a single node, group or grid:&lt;/p></description></item><item><title>Anima</title><link>https://anima.ceceppa.me/docs/anima/anima/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/anima/</guid><description>&lt;p>Once activated, the addon will add the Anima singleton class to your project.&lt;/p>
+&lt;h2 id="custom-nodes">Custom nodes &lt;a href="#custom-nodes" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Anima provides those two additional nodes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://anima.ceceppa.me/doc/anima-node.html">AnimaNode&lt;/a>, used to handle the setup of all the animations supported by the addon&lt;/li>
+&lt;li>&lt;a href="https://anima.ceceppa.me/doc/anima-tween.html">AnimaTween&lt;/a>, is the custom Tween used that allows the magic to happen :)&lt;/li>
+&lt;/ul>
+&lt;h2 id="syntax">Syntax &lt;a href="#syntax" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="https://anima.ceceppa.me/docs/anima/anima/#begin">begin(node, animation_name, is_single_shot)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://anima.ceceppa.me/docs/anima/anima/#begin_single_shot">begin_single_shot(node, animation_name)&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="reference">Reference &lt;a href="#reference" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="begin">begin &lt;a href="#begin" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>This method is used to programmatically add the AnimaNode to the scene as a child of the specified &lt;strong>node&lt;/strong> one.
+It will return the AnimaNode added attached to the specified &lt;strong>node&lt;/strong>.&lt;/p></description></item><item><title>Reusable vs Single Shot</title><link>https://anima.ceceppa.me/docs/tutorials/basics/reusable-animations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/basics/reusable-animations/</guid><description>&lt;p>By default, Anima animations are configured as &amp;lsquo;single-shot,&amp;rsquo; meaning the animated node is automatically removed from the scene once the animation completes.
+However, if you&amp;rsquo;re working with a looping animation, the node will remain in the scene even after the animation has looped indefinitely.
+You&amp;rsquo;re also able to force a reusable animation by using &lt;code>as_reusable&lt;/code> method.&lt;/p>
+&lt;h2 id="when-to-use--reusable-vs-single-shot">When to use reusable vs single shot &lt;a href="#when-to-use--reusable-vs-single-shot" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="as_reusable">&lt;code>as_reusable&lt;/code> &lt;a href="#as_reusable" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>This method should be used when:&lt;/p></description></item><item><title>Simple Animation</title><link>https://anima.ceceppa.me/docs/tutorials/node/simple-animation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/node/simple-animation/</guid><description>&lt;p>Let&amp;rsquo;s implement the following animation:&lt;/p>
+&lt;video controls preload="auto" width="100%" playsinline class="html-video">
+ &lt;source src="https://anima.ceceppa.me/popup.webm" type="video/webm">
+&lt;/video>
+
+
+
+
+&lt;p>As we can see the animation is made of 3 components:&lt;/p>
+&lt;ol>
+&lt;li>Popup panel&lt;/li>
+&lt;li>Text&lt;/li>
+&lt;li>Button&lt;/li>
+&lt;/ol>
+&lt;p>To create the animation in Godot let&amp;rsquo;s consider this basic Hierarchy:&lt;/p>
+&lt;p>
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+ &lt;img src="https://anima.ceceppa.me/images/tutorials/node-popup.png" alt="Popup example hierarchy" width="443" height="119" loading="lazy">
+ 
+ 
+&lt;/p></description></item><item><title>Constants</title><link>https://anima.ceceppa.me/docs/anima/constants/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/constants/</guid><description>&lt;p>&lt;a href="https://github.com/ceceppa/anima/blob/main/addons/anima/core/constants.gd" rel="external" target="_blank">https://github.com/ceceppa/anima/blob/main/addons/anima/core/constants.gd&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>&lt;/p>
+&lt;h2 id="easings">Easings &lt;a href="#easings" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="46e8092" class="language-gdscript ">
+ &lt;code>enum EASING {
+	LINEAR, 
+	EASE,
+	EASE_IN_OUT,
+	EASE_IN,
+	EASE_OUT,
+	EASE_IN_SINE,
+	EASE_OUT_SINE,
+	EASE_IN_OUT_SINE,
+	EASE_IN_QUAD,
+	EASE_OUT_QUAD,
+	EASE_IN_OUT_QUAD,
+	EASE_IN_CUBIC,
+	EASE_OUT_CUBIC,
+	EASE_IN_OUT_CUBIC,
+	EASE_IN_QUART,
+	EASE_OUT_QUART,
+	EASE_IN_OUT_QUART,
+	EASE_IN_QUINT,
+	EASE_OUT_QUINT,
+	EASE_IN_OUT_QUINT,
+	EASE_IN_EXPO,
+	EASE_OUT_EXPO,
+	EASE_IN_OUT_EXPO,
+	EASE_IN_CIRC,
+	EASE_OUT_CIRC,
+	EASE_IN_OUT_CIRC,
+	EASE_IN_BACK,
+	EASE_OUT_BACK,
+	EASE_IN_OUT_BACK,
+	EASE_IN_ELASTIC,
+	EASE_OUT_ELASTIC,
+	EASE_IN_OUT_ELASTIC,
+	EASE_IN_BOUNCE,
+	EASE_OUT_BOUNCE,
+	EASE_IN_OUT_BOUNCE,
+}&lt;/code>
+ &lt;/pr</description></item><item><title>Built in Easings</title><link>https://anima.ceceppa.me/docs/features/built-in-easings/</link><pubDate>Wed, 04 Sep 2024 15:20:16 +0100</pubDate><guid>https://anima.ceceppa.me/docs/features/built-in-easings/</guid><description>&lt;p>Anima provides about 33 easing functions that you can use to customize your animations.
+Here&amp;rsquo;s a list of the available easing functions:&lt;/p>
+&lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="441192f" class="language-gdscript ">
+ &lt;code>(
+ Anima.Node(self)
+ .anima_scale(Vector2.ONE, 0.7)
+ .anima_from(Vector2.ZERO)
+ .anima_easing(ANIMA.EASING.EASE_IN_OUT)
+ .play()
+)&lt;/code>
+ &lt;/pr</description></item><item><title>Quickstart</title><link>https://anima.ceceppa.me/docs/quickstart/</link><pubDate>Wed, 04 Sep 2024 14:52:56 +0100</pubDate><guid>https://anima.ceceppa.me/docs/quickstart/</guid><description>&lt;h1 id="installation">Installation &lt;a href="#installation" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h1>&lt;p>There are two ways to install Anima: using the Asset Library or the GitHub repository.&lt;/p>
+&lt;h2 id="using-the-asset-library">Using the Asset Library &lt;a href="#using-the-asset-library" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>The plugin is available on the &lt;a href="https://godotengine.org/asset-library/asset/1842" rel="external" target="_blank">Asset Library&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>.&lt;/p></description></item><item><title>Anima.Node</title><link>https://anima.ceceppa.me/docs/anima/anima-node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/anima-node/</guid><description>&lt;p>This class is used to animate a single node.&lt;/p>
+&lt;h2 id="syntax">Syntax &lt;a href="#syntax" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="226cec5" class="language-gdscript ">
+ &lt;code>Anima.Node(node: Node, delay = null) -&amp;gt; AnimaDeclaration&lt;/code>
+ &lt;/pre>
+ &lt;/div>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">param&lt;/th>
+ &lt;th style="text-align: left">type&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">node&lt;/td>
+ &lt;td style="text-align: left">Node&lt;/td>
+ &lt;td style="text-align: left">The node to animate&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">delay&lt;/td>
+ &lt;td style="text-align: left">float&lt;/td>
+ &lt;td style="text-align: left">The delay before starting the animation&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="example">Example &lt;a href="#example" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="1f4e27d" class="language-gdscript ">
+ &lt;code>(
+ Anima.Node($Label)
+ .anima_fade_in()
+ .play_with_delay(0.5)
+)&lt;/code>
+ &lt;/pr</description></item><item><title>The current value</title><link>https://anima.ceceppa.me/docs/tutorials/basics/fundamentals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/basics/fundamentals/</guid><description>&lt;p>When you create an animation, you can tell Anima exactly where to start and where to end.
+Or, you can just tell it where to end, and it will figure out where to start based on the current position.&lt;/p>
+&lt;h2 id="1-all-is-set">1. All is set &lt;a href="#1-all-is-set" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In this case, we give Anima all the info needed to create the animation, so it doesn&amp;rsquo;t matter when this is created.&lt;/p></description></item><item><title>Anima.Nodes</title><link>https://anima.ceceppa.me/docs/anima/anima-nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/anima-nodes/</guid><description>&lt;p>The &lt;code>Anima.MultiNode&lt;/code> class allows you to animate multiple independent nodes simultaneously. This provides a flexible way to create custom animation groups beyond the built-in &lt;code>Anima.Group&lt;/code> and &lt;code>Anima.Grid&lt;/code> classes.&lt;/p>
+&lt;p>&lt;strong>Key Distinction:&lt;/strong>&lt;/p>
+&lt;p>Unlike &lt;code>Anima.Group&lt;/code> and &lt;code>Anima.Grid&lt;/code>, which target the children of a node, &lt;code>Anima.MultiNode&lt;/code> directly animates the specified nodes themselves. This enables you to define your own &amp;ldquo;group&amp;rdquo; of nodes for animation, regardless of their hierarchical relationship.&lt;/p>
+&lt;h2 id="syntax">Syntax &lt;a href="#syntax" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="3507d88" class="language-gdscript ">
+ &lt;code>Anima.Nodes(node: Array[Node], items_delay: int = 0) -&amp;gt; AnimaDeclaration&lt;/code>
+ &lt;/pr</description></item><item><title>Multiple animations</title><link>https://anima.ceceppa.me/docs/tutorials/basics/multiple-animations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/basics/multiple-animations/</guid><description>&lt;p>Both &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='https://anima.ceceppa.me/docs/anima/'>&lt;p>DOCS&lt;/p>&lt;strong>Anima Addon&lt;/strong>&lt;br>Anima addon structure and usage&lt;/a>" data-bs-toggle="tooltip" href="https://anima.ceceppa.me/docs/anima/#begin">begin&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='https://anima.ceceppa.me/docs/anima/'>&lt;p>DOCS&lt;/p>&lt;strong>Anima Addon&lt;/strong>&lt;br>Anima addon structure and usage&lt;/a>" data-bs-toggle="tooltip" href="https://anima.ceceppa.me/docs/anima/#begin_single_shot">beging_single_shot&lt;/a> accept an animation name as second parameter:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="47468d9" class="language-gdscript ">
+ &lt;code>begin(node: Node, animation_name = &amp;#39;Anima&amp;#39;, is_single_shot := false) -&amp;gt; AnimaNode:
+begin_single_shot(node: Node, animation_name = &amp;#39;Anima&amp;#39;) -&amp;gt; AnimaNode:&lt;/code>
+ &lt;/pr</description></item><item><title>Anima.Grid</title><link>https://anima.ceceppa.me/docs/anima/animate-grid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/animate-grid/</guid><description>&lt;p>This class is used to animate all the direct child of the node specified.&lt;/p>
+&lt;h2 id="syntax">Syntax &lt;a href="#syntax" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="d222070" class="language-gdscript ">
+ &lt;code>Anima.Grid(grid: Node, grid_size: Vector2, items_delay: float, animation_type: int = GROUP.FROM_TOP, point := 0)&lt;/code>
+ &lt;/pr</description></item><item><title>Animate relative values</title><link>https://anima.ceceppa.me/docs/tutorials/basics/relative/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/basics/relative/</guid><description>&lt;p>Anima allows us to animate any property to an absolute or relative final value.
+Positions can be animated to a relative one by using any of the built-in &lt;a href="https://anima.ceceppa.me/docs/anima-declaration/#anima_relative_position">anima_relative_position_*&lt;/a> helpers,
+while for any other property we can use the &lt;a href="https://anima.ceceppa.me/docs/anima-declaration/#anima_as_relative">animate_as_relative&lt;/a> method.&lt;/p>
+&lt;p>The only thing to keep in mind is that&lt;/p>
+&lt;h2 id="example">Example &lt;a href="#example" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6728802" class="language-gdscript ">
+ &lt;code>Anima.begin_single_shot(true) \
+ .then( Anima.Node(self).anima_scale_x(1.5).anima_as_relative() ) \
+ .play()&lt;/code>
+ &lt;/pr</description></item><item><title>Anima.Group</title><link>https://anima.ceceppa.me/docs/anima/anima-group/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/anima-group/</guid><description>&lt;p>This class is used to animate all the direct child of the node specified.&lt;/p>
+&lt;h2 id="syntax">Syntax &lt;a href="#syntax" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="78814a8" class="language-gdscript ">
+ &lt;code>Anima.Group(group: Node, items_delay: float, animation_type: int = GROUP.FROM_TOP, point := 0)&lt;/code>
+ &lt;/pr</description></item><item><title>Dynamic Value</title><link>https://anima.ceceppa.me/docs/tutorials/basics/dynamic-value/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/basics/dynamic-value/</guid><description>&lt;p>Dynamic values let us provide a formula as the initial or final value that depends on a node property or its surrounding.&lt;/p>
+
+&lt;div class="alert alert-success d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ check_circle
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">Dynamic value is the key to creating truly reusable animations with Anima.&lt;/div>
+ &lt;/div>
+&lt;h2 id="fixed-value">Fixed value &lt;a href="#fixed-value" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before looking at dynamic values, let&amp;rsquo;s have a look at the following example:&lt;/p></description></item><item><title>AnimaTween</title><link>https://anima.ceceppa.me/docs/anima/anima-tween/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/anima-tween/</guid><description>&lt;p>This is the class that handles the tweening of the nodes.&lt;/p>
+&lt;p>&lt;a href="https://github.com/ceceppa/anima/blob/main/addons/anima/core/anima_tween.gd" rel="external" target="_blank">anima_tween.gd&lt;svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&lt;path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/>&lt;/svg>&lt;/a>&lt;/p></description></item></channel></rss>

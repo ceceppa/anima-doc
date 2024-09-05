@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Features on Anima documentation</title><link>https://anima.ceceppa.me/docs/features/</link><description>Recent content in Features on Anima documentation</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Wed, 04 Sep 2024 15:20:16 +0100</lastBuildDate><atom:link href="https://anima.ceceppa.me/docs/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Built in Animations</title><link>https://anima.ceceppa.me/docs/features/built-in-animations/</link><pubDate>Wed, 04 Sep 2024 15:20:16 +0100</pubDate><guid>https://anima.ceceppa.me/docs/features/built-in-animations/</guid><description>&lt;p>Anima&amp;rsquo;s extensive library of 89 built-in animations empowers you to create dynamic effects for your nodes, groups, and grids.&lt;/p>
+&lt;p>To apply an animation, simply use the &lt;code>anima_animation&lt;/code> method. Provide the animation name and duration as arguments. Here&amp;rsquo;s a quick example:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6ebb05d" class="language-gdscript ">
+ &lt;code>(
+ Anima.Node(self)
+ .anima_animation(&amp;#34;tada&amp;#34;, 0.7)
+ .play()
+)&lt;/code>
+ &lt;/pr</description></item><item><title>Built in Easings</title><link>https://anima.ceceppa.me/docs/features/built-in-easings/</link><pubDate>Wed, 04 Sep 2024 15:20:16 +0100</pubDate><guid>https://anima.ceceppa.me/docs/features/built-in-easings/</guid><description>&lt;p>Anima provides about 33 easing functions that you can use to customize your animations.
+Here&amp;rsquo;s a list of the available easing functions:&lt;/p>
+&lt;h2 id="usage">Usage &lt;a href="#usage" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="441192f" class="language-gdscript ">
+ &lt;code>(
+ Anima.Node(self)
+ .anima_scale(Vector2.ONE, 0.7)
+ .anima_from(Vector2.ZERO)
+ .anima_easing(ANIMA.EASING.EASE_IN_OUT)
+ .play()
+)&lt;/code>
+ &lt;/pr</description></item></channel></rss>
