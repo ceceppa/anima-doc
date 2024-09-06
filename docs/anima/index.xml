@@ -145,7 +145,7 @@ It will return the AnimaNode added attached to the specified &lt;strong>node&lt;
  &lt;div class="prism-codeblock ">
  &lt;pre id="3507d88" class="language-gdscript ">
  &lt;code>Anima.Nodes(node: Array[Node], items_delay: int = 0) -&amp;gt; AnimaDeclaration&lt;/code>
- &lt;/pr</description></item><item><title>Anima.Grid</title><link>https://anima.ceceppa.me/docs/anima/animate-grid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/animate-grid/</guid><description>&lt;p>This class is used to animate all the direct child of the node specified.&lt;/p>
+ &lt;/pr</description></item><item><title>Anima.Grid</title><link>https://anima.ceceppa.me/docs/anima/anima-grid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/anima/anima-grid/</guid><description>&lt;p>This class is used to animate all the direct child of the node specified.&lt;/p>
 &lt;h2 id="syntax">Syntax &lt;a href="#syntax" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
 
 

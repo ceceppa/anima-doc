@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guides on Anima documentation</title><link>https://anima.ceceppa.me/docs/guides/</link><description>Recent content in Guides on Anima documentation</description><generator>Hugo</generator><language>en-gb</language><atom:link href="https://anima.ceceppa.me/docs/guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Reusable vs Single Shot</title><link>https://anima.ceceppa.me/docs/guides/reusable-animations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/guides/reusable-animations/</guid><description>&lt;p>By default, Anima animations are configured as &amp;lsquo;single-shot,&amp;rsquo; meaning the animated node is automatically removed from the scene once the animation completes.
+However, if you&amp;rsquo;re working with a looping animation, the node will remain in the scene even after the animation has looped indefinitely.
+You&amp;rsquo;re also able to force a reusable animation by using &lt;code>as_reusable&lt;/code> method.&lt;/p>
+&lt;h2 id="when-to-use--reusable-vs-single-shot">When to use reusable vs single shot &lt;a href="#when-to-use--reusable-vs-single-shot" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;h3 id="as_reusable">&lt;code>as_reusable&lt;/code> &lt;a href="#as_reusable" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h3>&lt;p>This method should be used when:&lt;/p></description></item><item><title>The current value</title><link>https://anima.ceceppa.me/docs/guides/fundamentals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/guides/fundamentals/</guid><description>&lt;p>When you create an animation, you can tell Anima exactly where to start and where to end.
+Or, you can just tell it where to end, and it will figure out where to start based on the current position.&lt;/p>
+&lt;h2 id="1-all-is-set">1. All is set &lt;a href="#1-all-is-set" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>In this case, we give Anima all the info needed to create the animation, so it doesn&amp;rsquo;t matter when this is created.&lt;/p></description></item><item><title>Multiple animations</title><link>https://anima.ceceppa.me/docs/guides/multiple-animations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/guides/multiple-animations/</guid><description>&lt;p>Both &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='https://anima.ceceppa.me/docs/anima/'>&lt;p>DOCS&lt;/p>&lt;strong>Anima Addon&lt;/strong>&lt;br>Anima addon structure and usage&lt;/a>" data-bs-toggle="tooltip" href="https://anima.ceceppa.me/docs/anima/#begin">begin&lt;/a> and &lt;a data-bs-delay="{&amp;#34;hide&amp;#34;:300,&amp;#34;show&amp;#34;:550}" data-bs-html="true" data-bs-title="&lt;a href='https://anima.ceceppa.me/docs/anima/'>&lt;p>DOCS&lt;/p>&lt;strong>Anima Addon&lt;/strong>&lt;br>Anima addon structure and usage&lt;/a>" data-bs-toggle="tooltip" href="https://anima.ceceppa.me/docs/anima/#begin_single_shot">beging_single_shot&lt;/a> accept an animation name as second parameter:&lt;/p>
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="47468d9" class="language-gdscript ">
+ &lt;code>begin(node: Node, animation_name = &amp;#39;Anima&amp;#39;, is_single_shot := false) -&amp;gt; AnimaNode:
+begin_single_shot(node: Node, animation_name = &amp;#39;Anima&amp;#39;) -&amp;gt; AnimaNode:&lt;/code>
+ &lt;/pr</description></item><item><title>Animate relative values</title><link>https://anima.ceceppa.me/docs/guides/relative/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/guides/relative/</guid><description>&lt;p>Anima allows us to animate any property to an absolute or relative final value.
+Positions can be animated to a relative one by using any of the built-in &lt;a href="https://anima.ceceppa.me/docs/anima-declaration/#anima_relative_position">anima_relative_position_*&lt;/a> helpers,
+while for any other property we can use the &lt;a href="https://anima.ceceppa.me/docs/anima-declaration/#anima_as_relative">animate_as_relative&lt;/a> method.&lt;/p>
+&lt;p>The only thing to keep in mind is that&lt;/p>
+&lt;h2 id="example">Example &lt;a href="#example" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ &lt;div class="prism-codeblock ">
+ &lt;pre id="6728802" class="language-gdscript ">
+ &lt;code>Anima.begin_single_shot(true) \
+ .then( Anima.Node(self).anima_scale_x(1.5).anima_as_relative() ) \
+ .play()&lt;/code>
+ &lt;/pr</description></item><item><title>Dynamic Value</title><link>https://anima.ceceppa.me/docs/guides/dynamic-value/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/guides/dynamic-value/</guid><description>&lt;p>Dynamic values let us provide a formula as the initial or final value that depends on a node property or its surrounding.&lt;/p>
+
+&lt;div class="alert alert-success d-flex" role="alert">
+ &lt;div class="flex-shrink-1 alert-icon">
+ 
+ &lt;span class="material-icons size-20 me-2">
+ check_circle
+ &lt;/span>&lt;/div>
+ 
+ &lt;div class="w-100">Dynamic value is the key to creating truly reusable animations with Anima.&lt;/div>
+ &lt;/div>
+&lt;h2 id="fixed-value">Fixed value &lt;a href="#fixed-value" class="anchor" aria-hidden="true">&lt;i class="material-icons align-middle">link&lt;/i>&lt;/a>&lt;/h2>&lt;p>Before looking at dynamic values, let&amp;rsquo;s have a look at the following example:&lt;/p></description></item><item><title>Animation Keyframes</title><link>https://anima.ceceppa.me/docs/guides/animation-keyframes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/guides/animation-keyframes/</guid><description/></item></channel></rss>

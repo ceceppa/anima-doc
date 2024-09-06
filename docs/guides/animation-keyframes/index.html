@@ -1,54 +1,15 @@
-<!doctype html><html lang=en-gb><head><meta charset=utf-8><title>Multiple animations | Lotus Docs Example Site</title>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=https://anima.ceceppa.me/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=https://anima.ceceppa.me/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=https://anima.ceceppa.me/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://anima.ceceppa.me/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://anima.ceceppa.me/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=https://anima.ceceppa.me/site.webmanifest><meta property="og:title" content="Multiple animations"><meta property="og:description" content="Both begin and beging_single_shot accept an animation name as second parameter:
-
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  
-  
-  begin(node: Node, animation_name = 'Anima', is_single_shot := false) -> AnimaNode:
-begin_single_shot(node: Node, animation_name = 'Anima') -> AnimaNode:
-  "><meta property="og:type" content="article"><meta property="og:url" content="https://anima.ceceppa.me/docs/tutorials/basics/multiple-animations/"><meta property="og:image" content="https://anima.ceceppa.me/opengraph/card-base-2_hu2153976670182413475.png"><meta property="article:section" content="docs"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://anima.ceceppa.me/opengraph/card-base-2_hu2153976670182413475.png"><meta name=twitter:title content="Multiple animations"><meta name=twitter:description content="Both begin and beging_single_shot accept an animation name as second parameter:
-
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  
-  
-  begin(node: Node, animation_name = 'Anima', is_single_shot := false) -> AnimaNode:
-begin_single_shot(node: Node, animation_name = 'Anima') -> AnimaNode:
-  "><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=https://anima.ceceppa.me/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.180e5a086197f384396217fc68e7fce6d6aa38d0a772aa0fb28b4c989d6e9aca0836b43ef1dd74b4397ac68717b133e8.css crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li><a class=sidebar-root-link href=https://anima.ceceppa.me/docs/overview/><i class="material-icons me-2">article</i>
+<!doctype html><html lang=en-gb><head><meta charset=utf-8><title>Animation Keyframes | Lotus Docs Example Site</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=https://anima.ceceppa.me/favicon.ico sizes=any><link rel=icon type=image/svg+xml href=https://anima.ceceppa.me/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=https://anima.ceceppa.me/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://anima.ceceppa.me/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://anima.ceceppa.me/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=https://anima.ceceppa.me/site.webmanifest><meta property="og:title" content="Animation Keyframes"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://anima.ceceppa.me/docs/guides/animation-keyframes/"><meta property="og:image" content="https://anima.ceceppa.me/opengraph/card-base-2_hu3192549380649966174.png"><meta property="article:section" content="docs"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://anima.ceceppa.me/opengraph/card-base-2_hu3192549380649966174.png"><meta name=twitter:title content="Animation Keyframes"><meta name=twitter:description content><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=https://anima.ceceppa.me/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.180e5a086197f384396217fc68e7fce6d6aa38d0a772aa0fb28b4c989d6e9aca0836b43ef1dd74b4397ac68717b133e8.css crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 72px)"><ul class=sidebar-menu><li><a class=sidebar-root-link href=https://anima.ceceppa.me/docs/overview/><i class="material-icons me-2">article</i>
 Overview</a></li><li><a class=sidebar-root-link href=https://anima.ceceppa.me/docs/quickstart/><i class="material-icons me-2">article</i>
 Quickstart</a></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">folder</i>
-Anima Addon</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima/>Anima</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/constants/>Constants</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-node/>Anima.Node</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-nodes/>Anima.Nodes</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/animate-grid/>Anima.Grid</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-group/>Anima.Group</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-tween/>AnimaTween</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+Anima Addon</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima/>Anima</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/constants/>Constants</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-node/>Anima.Node</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-nodes/>Anima.Nodes</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-grid/>Anima.Grid</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-group/>Anima.Group</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/anima/anima-tween/>AnimaTween</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
 <i class="material-icons me-2">rocket_launch</i>
 Features</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/features/built-in-animations/>Built in Animations</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/features/built-in-easings/>Built in Easings</a></li></ul></div></li><li class="sidebar-dropdown current active"><button class=btn>
 <i class="material-icons me-2">developer_guide</i>
-Tutorials</button><div class="sidebar-submenu d-block"><ul><li class="sidebar-dropdown nested current active"><button class=btn>
-Basics</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/basics/reusable-animations/>Reusable vs Single Shot</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/basics/fundamentals/>The current value</a></li><li class=current><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/basics/multiple-animations/>Multiple animations</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/basics/relative/>Animate relative values</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/basics/dynamic-value/>Dynamic Value</a></li></ul></div></li><li class="sidebar-dropdown nested"><button class=btn>
-Animate single node</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/node/popup-animation/>Popup Animation</a></li></ul></div></li><li class="sidebar-dropdown nested"><button class=btn>
-Extras</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/extras/animation-keyframes/>Animation Keyframes</a></li></ul></div></li></ul></div></li></ul></div><ul class="sidebar-footer list-unstyled mb-0"></ul></nav><main class="page-content bg-transparent"><div id=top-header class="top-header d-print-none"><div class="header-bar d-flex justify-content-between"><div class="d-flex align-items-center"><a href=/ class="logo-icon me-3" aria-label=HomePage alt=HomePage><div class=small><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div><div class=big><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div></a><button id=close-sidebar class="btn btn-icon btn-soft">
+Guides</button><div class="sidebar-submenu d-block"><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/guides/reusable-animations/>Reusable vs Single Shot</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/guides/fundamentals/>The current value</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/guides/multiple-animations/>Multiple animations</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/guides/relative/>Animate relative values</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/guides/dynamic-value/>Dynamic Value</a></li><li class=current><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/guides/animation-keyframes/>Animation Keyframes</a></li></ul></div></li><li class=sidebar-dropdown><button class=btn>
+<i class="material-icons me-2">developer_guide</i>
+Tutorials</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/01-basic-animation/>01: Basic Animation</a></li><li><a class=sidebar-nested-link href=https://anima.ceceppa.me/docs/tutorials/02-popup-animation/>02: Popup Animation (Sequential animation)</a></li></ul></div></li></ul></div></nav><main class="page-content bg-transparent"><div id=top-header class="top-header d-print-none"><div class="header-bar d-flex justify-content-between"><div class="d-flex align-items-center"><a href=/ class="logo-icon me-3" aria-label=HomePage alt=HomePage><div class=small><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div><div class=big><svg id="Layer_1" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div></a><button id=close-sidebar class="btn btn-icon btn-soft">
 <span class="material-icons size-20 menu-icon align-middle">menu</span>
 </button>
 <button id=flexsearch-button class="ms-3 btn btn-soft" data-bs-toggle=collapse data-bs-target=#FlexSearchCollapse aria-expanded=false aria-controls=FlexSearchCollapse>
@@ -63,34 +24,10 @@ Extras</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link h
 <span class=flexsearch-key-label>to close</span></li></div><form class="flexsearch position-relative flex-grow-1 ms-2 me-2"><div class="d-flex flex-row"><input id=flexsearch class=form-control type=search placeholder=Search aria-label=Search autocomplete=off>
 <button id=hideFlexsearch type=button class="ms-2 btn btn-soft">
 cancel</button></div><div id=suggestions class="shadow rounded-1 d-none"></div></form></div></div></div><div class=container-fluid><div class=layout-spacing><div class="d-md-flex justify-content-between align-items-center"><nav aria-label=breadcrumb class="d-inline-block pb-2 mt-1 mt-sm-0"><ul id=breadcrumbs class="breadcrumb bg-transparent mb-0" itemscope itemtype=https://schema.org/BreadcrumbList><li class="breadcrumb-item text-capitalize active" aria-current=page itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/><i class="material-icons size-20 align-text-bottom" itemprop=name>Home</i>
-</a><meta itemprop=position content='1'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/tutorials/><span itemprop=name>Tutorials</span>
-</a><meta itemprop=position content='2'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/tutorials/basics/><span itemprop=name>Basics</span>
-</a><meta itemprop=position content='3'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Multiple animations</span>
-<meta itemprop=position content='4'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc><ul><li><a href=#when-to-use-a-custom-animation-name>When to use a custom animation name?</a></li></ul></nav></toc></div><div class="docs-toc-mobile d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
-Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><a href=#when-to-use-a-custom-animation-name>When to use a custom animation name?</a></li></ul></nav></div><div class="docs-content col-12 col-xl-9 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">developer_guide</i><h1 class="content-title mb-0">Multiple animations</h1></div><p class="lead mb-3"></p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><p>Both <a data-bs-delay='{"hide":300,"show":550}' data-bs-html=true data-bs-title="<a href='/docs/anima/'><p>DOCS</p><strong>Anima Addon</strong><br>Anima addon structure and usage</a>" data-bs-toggle=tooltip href=/docs/anima/#begin>begin</a> and <a data-bs-delay='{"hide":300,"show":550}' data-bs-html=true data-bs-title="<a href='/docs/anima/'><p>DOCS</p><strong>Anima Addon</strong><br>Anima addon structure and usage</a>" data-bs-toggle=tooltip href=/docs/anima/#begin_single_shot>beging_single_shot</a> accept an animation name as second parameter:</p><div class=prism-codeblock><pre id=47468d9 class=language-gdscript>
-  <code>begin(node: Node, animation_name = &#39;Anima&#39;, is_single_shot := false) -&gt; AnimaNode:
-begin_single_shot(node: Node, animation_name = &#39;Anima&#39;) -&gt; AnimaNode:</code>
-  </pre></div><p>Ths <code>animation_name</code> parameter is used by Anima to see if an <a href=/docs/anima-node/>AnimaNode</a> with that name already exists;
-and if so, reuse it; otherwise, create a new one.</p><p>:::caution</p><p>Any time Anima finds an AnimaNode, after calling <code>begin</code> or <code>begin_single_shot</code>, it will automatically stop and clear any animation attached to it.
-:::</p><h2 id=when-to-use-a-custom-animation-name>When to use a custom animation name? <a href=#when-to-use-a-custom-animation-name class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><p>Generally, we want to reuse a single AnimaNode without the need of adding several AnimaNode to the scene.
-But there might be cases when we want to play unrelated animations that could co-occur, for example:</p><div class=prism-codeblock><pre id=c301c6f class=language-gdscript>
-  <code>func set_position(position: Vector2, default := false) -&gt; void:
-   animate_param(&#34;position&#34;, position)
-
-func set_size(size: Vector2, default := false) -&gt; void:
-   animate_param(&#34;size&#34;, size)
-
-func set_scale(scale: Vector2, default := false) -&gt; void:
-   animate_param(&#34;scale&#34;, scale)
-
-func animate_param(property: String, value, from = null) -&gt; void:
-    Anima.begin_single_shot(self, property) \
-        then( Anima.Node(self).anima_property(property, value, 0.3).anima_from(from) ) \
-        .play()</code>
-  </pre></div><p>This code is part of the Animatable component.</p><p>As we can see, it allows us to animate the control&rsquo;s position, size and scale from another script when setting one of those properties.
-The problem here is we have no control over how and when these methods will be called.
-We might call one or more methods simultaneously or with a delay.
-We have no control over this, and we can&rsquo;t use a single AnimaNode, as we could risk interrupting an ongoing animation to animate another property.</p><p>So, using different animation names will create their AnimaNode, but will reuse the same one if we try to animate the same property.</p></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/anima/anima-nodes/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Anima.Nodes</p><p class="card-text ms-2">Anima.Nodes class reference</p></div></div></a></div><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/anima/animate-grid/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Anima.Grid <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2">Anima.Grid class reference</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2024 Ceceppa. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
+</a><meta itemprop=position content='1'></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/guides/><span itemprop=name>Guides</span>
+</a><meta itemprop=position content='2'></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Animation Keyframes</span>
+<meta itemprop=position content='3'></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 visually-hidden d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc></nav></toc></div><div class="docs-toc-mobile visually-hidden d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
+Table of Contents</button><nav id=toc-mobile></nav></div><div class="docs-content col-12 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">developer_guide</i><h1 class="content-title mb-0">Animation Keyframes</h1></div><p class="lead mb-3"></p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap"><div class="col-sm-6 pt-2 doc-next"><a href=/docs/anima/anima-tween/><div class="card h-100 my-1"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> AnimaTween</p><p class="card-text ms-2">Anima.Nodes class reference</p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2024 Ceceppa. Built with <a href=https://github.com/colinwilson/lotusdocs><strong>Lotus Docs</strong></a></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
 <script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script><script src=/docs/js/bootstrap.eac7ee3f6fa791c684e7a51fc2fd50b6f724271b9e39562e4fe8c3942412df3acbfc4045f043d03399dac70091207507.js defer></script><script type=text/javascript src=https://anima.ceceppa.me/docs/js/bundle.min.0bde7cc41dfef064d2d9e52f1247f4c93daae033e7105ba15dafdc6a116e408593521db17d7e89dff33d6b13f1b77a9e.js crossorigin=anonymous defer></script><script type=module>
     var suggestions = document.getElementById('suggestions');
     var search = document.getElementById('flexsearch');
@@ -362,13 +299,6 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
     
     
     
-    
-    
-    
-    
-    
-    
-    
 
 
     
@@ -389,13 +319,22 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
                 id:  1 ,
                 href: "\/docs\/overview\/",
                 title: "Overview",
-                description: "Anima makes animation accessible to everyone, regardless of skill level. With just a few lines of code and simple syntax, you can effortlessly create sequential and parallel animations. Choose from our extensive library of 89 animations and 33 easing functions, or customize your own to match your vision.\nCustom nodes linkAnima provides those two additional nodes:\nAnimaNode, used to handle the setup of all the animations supported by the addon AnimaTween, is the custom Tween used that allows the magic to happen :) Animation Declaration linkAnimation declarations are used to tell anima how to animate a single node, group or grid:\n",
-                content: "Anima makes animation accessible to everyone, regardless of skill level. With just a few lines of code and simple syntax, you can effortlessly create sequential and parallel animations. Choose from our extensive library of 89 animations and 33 easing functions, or customize your own to match your vision.\nCustom nodes linkAnima provides those two additional nodes:\nAnimaNode, used to handle the setup of all the animations supported by the addon AnimaTween, is the custom Tween used that allows the magic to happen :) Animation Declaration linkAnimation declarations are used to tell anima how to animate a single node, group or grid:\nAnimaDeclarationNode Example link var anima = ( Anima.begin(self) .then(Anima.Node($node).anima_animation(\"tada\", 0.7)) ).play() Live demo linkDo you want to give it a try? Here is a live demo with some examples: https://ceceppa.me/anima-demo\n"
+                description: "Anima makes animation accessible to everyone, regardless of skill level. With just a few lines of code and simple syntax, you can effortlessly create sequential and parallel animations. Choose from our extensive library of 89 animations and 33 easing functions, or customize your own to match your vision.\nClasses linkAnima provides a set of classes that allow you to animate nodes in a simple and intuitive way. Here is a list of the available:\n",
+                content: "Anima makes animation accessible to everyone, regardless of skill level. With just a few lines of code and simple syntax, you can effortlessly create sequential and parallel animations. Choose from our extensive library of 89 animations and 33 easing functions, or customize your own to match your vision.\nClasses linkAnima provides a set of classes that allow you to animate nodes in a simple and intuitive way. Here is a list of the available:\n"
             }
         );
     index.add(
             {
                 id:  2 ,
+                href: "\/docs\/tutorials\/01-basic-animation\/",
+                title: "01: Basic Animation",
+                description: "An example of a basic animation",
+                content: "Let’s implement the following animation:\nAs we can see the animation is made of 3 components:\nPopup panel Text Button To create the animation in Godot let’s consider this basic Hierarchy:\nBefore writing any code let’s see how the animation is made:\nThe panel opens → then the text is animated → then the button is animated but its starting time is anticipated of about 0.2 seconds In this example the Panel opening is realized animating the scale:y property from 0 → 1. The Label uses the built-in typewrite animation; while the Button uses the tada one.\nWe want to animate the popup as soon as the scene is open, so let’s add our code inside the _ready function:\nThe animation linkBecause we’re animating a single node we’re going to use the "
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
                 href: "\/docs\/anima\/anima\/",
                 title: "Anima",
                 description: "Anima addon",
@@ -404,35 +343,8 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  3 ,
-                href: "\/docs\/tutorials\/extras\/animation-keyframes\/",
-                title: "Animation Keyframes",
-                description: "",
-                content: ""
-            }
-        );
-    index.add(
-            {
                 id:  4 ,
-                href: "\/docs\/tutorials\/basics\/",
-                title: "Basics",
-                description: "Those tutorials give us an understanding of how Anima internal works",
-                content: ""
-            }
-        );
-    index.add(
-            {
-                id:  5 ,
-                href: "\/docs\/tutorials\/node\/popup-animation\/",
-                title: "Popup Animation",
-                description: "An example of a sequential animation",
-                content: "Let’s implement the following animation:\nAs we can see the animation is made of 3 components:\nPopup panel Text Button To create the animation in Godot let’s consider this basic Hierarchy:\nBefore writing any code let’s see how the animation is made:\nThe panel opens → then the text is animated → then the button is animated but its starting time is anticipated of about 0.2 seconds In this example the Panel opening is realized animating the scale:y property from 0 → 1. The Label uses the built-in typewrite animation; while the Button uses the tada one.\nWe want to animate the popup as soon as the scene is open, so let’s add our code inside the _ready function:\nThe animation linkBecause we’re animating a single node we’re going to use the "
-            }
-        );
-    index.add(
-            {
-                id:  6 ,
-                href: "\/docs\/tutorials\/basics\/reusable-animations\/",
+                href: "\/docs\/guides\/reusable-animations\/",
                 title: "Reusable vs Single Shot",
                 description: "By default, Anima animations are configured as ‘single-shot,’ meaning the animated node is automatically removed from the scene once the animation completes. However, if you’re working with a looping animation, the node will remain in the scene even after the animation has looped indefinitely. You’re also able to force a reusable animation by using as_reusable method.\nWhen to use reusable vs single shot linkas_reusable linkThis method should be used when:\n",
                 content: "By default, Anima animations are configured as ‘single-shot,’ meaning the animated node is automatically removed from the scene once the animation completes. However, if you’re working with a looping animation, the node will remain in the scene even after the animation has looped indefinitely. You’re also able to force a reusable animation by using as_reusable method.\nWhen to use reusable vs single shot linkas_reusable linkThis method should be used when:\nwe need to initialised the animation on _ready (see Understanding the current value) we want to animate a node out using the same animation but played backwards we want to animate an animation in loop Single Shot linkThis method is useful when:\nWhen the current value needs to be used as initial values (see Understanding the current value) We want to free memory once the animation completes "
@@ -440,7 +352,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  7 ,
+                id:  5 ,
                 href: "\/docs\/anima\/constants\/",
                 title: "Constants",
                 description: "Anima addon constants",
@@ -449,7 +361,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  8 ,
+                id:  6 ,
                 href: "\/docs\/features\/built-in-easings\/",
                 title: "Built in Easings",
                 description: "Anima provides about 33 easing functions that you can use to customize your animations. Here’s a list of the available easing functions:\nUsage link ( Anima.Node(self) .anima_scale(Vector2.ONE, 0.7) .anima_from(Vector2.ZERO) .anima_easing(ANIMA.EASING.EASE_IN_OUT) .play() ) ",
@@ -458,7 +370,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  9 ,
+                id:  7 ,
                 href: "\/docs\/quickstart\/",
                 title: "Quickstart",
                 description: "Installation linkThere are two ways to install Anima: using the Asset Library or the GitHub repository.\nUsing the Asset Library linkThe plugin is available on the Asset Library.\n",
@@ -467,7 +379,16 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  10 ,
+                id:  8 ,
+                href: "\/docs\/tutorials\/02-popup-animation\/",
+                title: "02: Popup Animation (Sequential animation)",
+                description: "An example of a sequential animation",
+                content: "Let’s implement the following animation:\nAs we can see the animation is made of 3 components:\nPopup panel Text Button To create the animation in Godot let’s consider this basic Hierarchy:\nBefore writing any code let’s see how the animation is made:\nThe panel opens → then the text is animated → then the button is animated but its starting time is anticipated of about 0.2 seconds In this example the Panel opening is realized animating the scale:y property from 0 → 1. The Label uses the built-in typewrite animation; while the Button uses the tada one.\nWe want to animate the popup as soon as the scene is open, so let’s add our code inside the _ready function:\nThe animation linkBecause we’re animating a single node we’re going to use the "
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
                 href: "\/docs\/anima\/",
                 title: "Anima Addon",
                 description: "Anima addon structure and usage",
@@ -476,7 +397,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  11 ,
+                id:  10 ,
                 href: "\/docs\/anima\/anima-node\/",
                 title: "Anima.Node",
                 description: "Anima.Node class reference",
@@ -485,8 +406,8 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  12 ,
-                href: "\/docs\/tutorials\/basics\/fundamentals\/",
+                id:  11 ,
+                href: "\/docs\/guides\/fundamentals\/",
                 title: "The current value",
                 description: "When you create an animation, you can tell Anima exactly where to start and where to end. Or, you can just tell it where to end, and it will figure out where to start based on the current position.\n1. All is set linkIn this case, we give Anima all the info needed to create the animation, so it doesn’t matter when this is created.\n",
                 content: "When you create an animation, you can tell Anima exactly where to start and where to end. Or, you can just tell it where to end, and it will figure out where to start based on the current position.\n1. All is set linkIn this case, we give Anima all the info needed to create the animation, so it doesn’t matter when this is created.\n( Anima.Node(self) .anima_position_x(100, 1) .anima_from(0) .play() ) This code animates the x position from 0 to 100 in 1 second. We specified the initial value as 0 and the final value as 100.\n2. The current value link warning When the animation is created matters! To understand what this means, let’s consider the following example:\nIn our test scene, we have a Button and a Sprite:\nSprite with the initial position of Vector2(490, 280). Button animates the Sprite to a final position of x = 600 using 1 second. Now let’s consider the following two animations:\n"
@@ -494,7 +415,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  13 ,
+                id:  12 ,
                 href: "\/docs\/anima\/anima-nodes\/",
                 title: "Anima.Nodes",
                 description: "Anima.Nodes class reference",
@@ -503,7 +424,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  14 ,
+                id:  13 ,
                 href: "\/docs\/features\/",
                 title: "Features",
                 description: "Anima's built-in animations and easing functions",
@@ -512,26 +433,8 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  15 ,
-                href: "\/docs\/tutorials\/node\/",
-                title: "Animate single node",
-                description: "Advanced topics and tips",
-                content: ""
-            }
-        );
-    index.add(
-            {
-                id:  16 ,
-                href: "\/docs\/tutorials\/extras\/",
-                title: "Extras",
-                description: "",
-                content: ""
-            }
-        );
-    index.add(
-            {
-                id:  17 ,
-                href: "\/docs\/tutorials\/basics\/multiple-animations\/",
+                id:  14 ,
+                href: "\/docs\/guides\/multiple-animations\/",
                 title: "Multiple animations",
                 description: "Both ",
                 content: "Both "
@@ -539,8 +442,8 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  18 ,
-                href: "\/docs\/anima\/animate-grid\/",
+                id:  15 ,
+                href: "\/docs\/anima\/anima-grid\/",
                 title: "Anima.Grid",
                 description: "Anima.Grid class reference",
                 content: "This class is used to animate all the direct child of the node specified.\nSyntax link Anima.Grid(grid: Node, grid_size: Vector2, items_delay: float, animation_type: int = GROUP.FROM_TOP, point := 0) param type Default Description group Node The node of whom children we want to animate grid_size Vector2 The grid size items_delay float The incremental delay to apply for each child of the group animation_type ANIMA.GRID ANIMA.GRID.FROM_TOP_RIGHT The order to which animate the elements point Vector2 Vector2.ZERO The starting point of the animation Animation type linkThe animation type parameter is used to define how to animate the nodes inside the group or create staggered animations.\nOption Description FROM_TOP Animates the group items from top to down FROM_BOTTOM Animates the group items from bottom to top FROM_CENTER Animated the items from the center of the group to the top and bottom at the same time. TOGETHER Animates all the items at the same time. items_delay is ignored ODDS_ONLY Animates the group odd items only, starting from the top EVEN_ONLY Animates the even items only, starting from the top RANDOM Randomize the group starting point FROM_INDEX The item index to start the animation Staggered Animation linkSelecting the starting index is inside the range ]0, GROUP_LENGTH[ creates a staggering animation, where node starting delay depends by its absolute distance from that point.\nLet’s consider the following group with 7 buttons:\nAnd animate them from the middle using, for semplicity, a delay of 1 second between each node:\nAnima.Grid($Control, 1, ANIMA.GROUP.FROM_CENTER) \\ .anima_fade_in() The middle node of this group is: Button4 with an index of 3, then:\nButton3 and Button5 have an absolute distance from Button4 of 1 Button2 and Button5 have an absolute distance from Button4 of 2 Button1 and Button5 have an absolute distance from Button4 of 3 So this is equivalent to:\nFade in Button4 Wait 1 second Fade in Button3 and Button5 Wait 1 second Fade in Button2 and Button6 Wait 1 second Fade in Button1 and Button7 Methods linkNOTE: For commodity, all the class methods start with the anima_ prefix. This allows us to filter out all the Godot default class methods:\nas_reusable linkTells Anima to keep the node in the scene after the animation completes.\nSyntax link as_reusable() anima_animation linkAnimates the Grid using the given animation name.\nSyntax link anima_animation(animation: String, duration: float) animation string required The animation name duration float optional The animation duration (in seconds). If null, the default duration is used Default: null Example link Anim.Grid(Vector2(2, 2), 0.1).anima_animation(\"zoomIn\") anima_animation_frames linkAnimates the Grid using a CSS-Style inline animation.\nNOTE: For more info check the Animation Keyframes tutorial\nSyntax link anima_animation_frames(frames: Dictionary, duration: float) frames Dictionary required The animation frames. SeeCreate a custom keyframes animation for more information about the syntax duration float optional The animation duration (in seconds). If null, the default duration is used Default: null Example: link Anim.Grid(Vector2(2, 2), 0.1).anima_animation_frames({ from = { opacity = 0, x = 0, y = 0, }, to = { opacity = 1, x = 100 y = 100 }, easing = AnimaEasing.EASING.EASE_IN_OUT }) anima_property linkAnimates the given property.\nCompared to the other property specific fuctions, like anima_position_x this method allows us to specify a dynamic value\nSyntax link anima_property(property: String, final_value: Variant, duration: float) property string required The property to animate it can be any node property that can be accessed, even exported variables. For example:\nsize position We can also specify the subkey of the Vector2, Vector3 or Rect2 we want to animate, for example:\nsize:x position:y size:width Anima also recognised these built-in property names:\nproperty description x This is equivalent to position:x or rect_position:x y This is equivalent to position:y or rect_position:x z This is equivalent to position:z or rect_position:x width This is equivalent to size:x or rect_size:x height This is equivalent to size:y or rect_size:y shared_param This will call set_shader_param final_value Variant required (Optional) The final value. If null, the current property value is used as final value duration float optional The animation duration (seconds). If null, the default duration is used Default: null Example link Anima.Grid(Vector2(2, 2), 0.1).anima_property(\"size:x\").anima_from(100) Anima.Grid(Vector2(2, 2), 0.1).anima_property(\"x\", 200) position vs rect_position linkAlthough Godot prefixes some of the Controls properties with rect_, we don’t need to worry about that; Anima will figure out the correct property name.\nFor example:\nAnima.Grid($Control).anima_property(\"position:x\", 100 ) # Animates rect_position.x Anima.Grid($Node2D).anima_property(\"position:x\", 100 ) # Animates position.x anima_as_relative linkTells anima that the final value is a relative one\nSyntax link anima_as_relative() Example link Anima.Grid(Vector2(2, 2), 0.1).anima_scale_x(0.8).anima_as_relative() anima_delay linkThe delay to use before starting the animation.\nSyntax link anima_delay(delay: float) NOTE: You can also use negative values to anticipate a sequential/parallel animation\nExample link Anima.Grid(Vector2(2, 2), 0.1).anima_scale_x(0.8).anima_delay(0.5) # or Anima.Grid(Vector2(2, 2), 0.1).anima_scale_x(0.8).anima_delay(-0.5) anima_distance_formula linkThe formula to use to calculate the distance between the elements.\nSyntax link .anima_distance_formula(formula: ANIMA.DISTANCE) formula ANIMA.DISTANCE required The formula to use to calculate the distance between the elements Formula\nenum DISTANCE { EUCLIDIAN, MANHATTAN, CHEBYSHEV, COLUMN, ROW, DIAGONAL, } To visualize the effects of different easing formulas, explore these resources:\n2D Grid Demo Live Demo: Animate 2D Grid These demonstrations will provide a clear understanding of how easing points influence animation behavior.\nExample link ( Anima.Grid(Vector2(2, 2), 0.1) .anima_distance_formula(ANIMA.DISTANCE.MANHATTAN) .anima_fade_in() .play() ) anima_easing linkThe easing to use to animate the node.\nNOTE: "
@@ -548,8 +451,8 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  19 ,
-                href: "\/docs\/tutorials\/basics\/relative\/",
+                id:  16 ,
+                href: "\/docs\/guides\/relative\/",
                 title: "Animate relative values",
                 description: "Anima allows us to animate any property to an absolute or relative final value. Positions can be animated to a relative one by using any of the built-in anima_relative_position_* helpers, while for any other property we can use the animate_as_relative method.\nThe only thing to keep in mind is that\nExample link Anima.begin_single_shot(true) \\ .then( Anima.Node(self).anima_scale_x(1.5).anima_as_relative() ) \\ .play() ",
                 content: "Anima allows us to animate any property to an absolute or relative final value. Positions can be animated to a relative one by using any of the built-in anima_relative_position_* helpers, while for any other property we can use the animate_as_relative method.\nThe only thing to keep in mind is that\nExample link Anima.begin_single_shot(true) \\ .then( Anima.Node(self).anima_scale_x(1.5).anima_as_relative() ) \\ .play() This will increase the scale:x value of +1.5, from whatever the current value was at the time the animation was created.\n"
@@ -557,7 +460,16 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  20 ,
+                id:  17 ,
+                href: "\/docs\/guides\/",
+                title: "Guides",
+                description: "Understand how Anima works",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  18 ,
                 href: "\/docs\/tutorials\/",
                 title: "Tutorials",
                 description: "Anima addon tutorials",
@@ -566,7 +478,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  21 ,
+                id:  19 ,
                 href: "\/docs\/anima\/anima-group\/",
                 title: "Anima.Group",
                 description: "Anima.Group class reference",
@@ -575,8 +487,8 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  22 ,
-                href: "\/docs\/tutorials\/basics\/dynamic-value\/",
+                id:  20 ,
+                href: "\/docs\/guides\/dynamic-value\/",
                 title: "Dynamic Value",
                 description: "Dynamic values let us provide a formula as the initial or final value that depends on a node property or its surrounding.\ncheck_circle Dynamic value is the key to creating truly reusable animations with Anima. Fixed value linkBefore looking at dynamic values, let’s have a look at the following example:\n",
                 content: "Dynamic values let us provide a formula as the initial or final value that depends on a node property or its surrounding.\ncheck_circle Dynamic value is the key to creating truly reusable animations with Anima. Fixed value linkBefore looking at dynamic values, let’s have a look at the following example:\nAnima.begin_single_shot(self).then( Anima.Group($Grid) .anima_property(\"x\") .anima_from(-100) ).play() The animation translates the group children to their current position, as we haven’t defined any final value for x, from an initial position.\nIn the example the initial position is [current_value] - 100, supposing that 100 is the width of the node(s).\nLimitations of fixed values linkWe assumed that 100 is the node’s width, but:\nthere is no real correlation between the number and actual width inside the grid, we might have nodes with different widths Also, if we change any size of the nodes, we would then adjust the animation with the new value.\nLet’s calculate it linkSure, we could calculate the value manually, for example:\nAnima.begin_single_shot(self).then( Anima.Group($Grid) .anima_property(\"x\") .anima_from($Grid.get_child(0).rect_size.x) ).play() We fix the issue number 1, but the 2nd still stands. Also, we made the code a bit less reusable as we tightened our “from” value to a specific node.\nDynamic value linkAnima solves all the limitations of the fixed values by letting you specify a dynamic formula that is computed when the animation is initialised.\nSyntax linkThe syntax of a single dynamic value is:\n[relative node]:[property]:[sub key] param type Required Description relative node Node no The node from whom retrieve the property and sub key. An empty value or . indicates the node animated itself property Variant yes The property value to compute sub key Variant no The property subkey Example link Anima.begin_single_shot(self).then( Anima.Group($Grid) .anima_property(\"x\") .anima_from(\"-.:size:x\") ).play() Let’s analyse the parts of the dynamic value, and we have :size:x\nparameter value description relative node The value is empty, meaning that we’re going to read the property and subkey from the node we’re animating property size The node size (or rect_size) sub key x The size.x value NOTE: One thing we must keep in mind is that Anima creates an animation for every node in Group and Grid animations, so using . or `` for the relative node means getting the property from the current child Anima is going to animate.\nLet’s be more specific and consider a Grid node with the following children:\nNode size Button Vector2(100, 100) Label Vector2(50, 30) Sprite Vector2(150, 80) When Anima generates the animation will compute -:size:x with:\nNode from Button -100 Label -50 Sprite -150 As we can see, the initial value is replaced with the animated Node width. Also, the value is negative because we specified the - in the formula.\nWe can find more example of dynamic values in the following area:\nAnimate a single node Animate a group node Animate a grid "
@@ -584,7 +496,7 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  23 ,
+                id:  21 ,
                 href: "\/docs\/anima\/anima-tween\/",
                 title: "AnimaTween",
                 description: "Anima.Nodes class reference",
@@ -593,7 +505,16 @@ We have no control over this, and we can&rsquo;t use a single AnimaNode, as we c
         );
     index.add(
             {
-                id:  24 ,
+                id:  22 ,
+                href: "\/docs\/guides\/animation-keyframes\/",
+                title: "Animation Keyframes",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  23 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",

@@ -1,1 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Anima documentation</title><link>https://anima.ceceppa.me/docs/tutorials/</link><description>Recent content in Tutorials on Anima documentation</description><generator>Hugo</generator><language>en-gb</language><atom:link href="https://anima.ceceppa.me/docs/tutorials/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Anima documentation</title><link>https://anima.ceceppa.me/docs/tutorials/</link><description>Recent content in Tutorials on Anima documentation</description><generator>Hugo</generator><language>en-gb</language><atom:link href="https://anima.ceceppa.me/docs/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>01: Basic Animation</title><link>https://anima.ceceppa.me/docs/tutorials/01-basic-animation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/01-basic-animation/</guid><description>&lt;p>Let&amp;rsquo;s implement the following animation:&lt;/p>
+&lt;video controls preload="auto" width="100%" playsinline class="html-video">
+ &lt;source src="https://anima.ceceppa.me/docs/popup.webm" type="video/webm">
+&lt;/video>
+
+
+
+
+&lt;p>As we can see the animation is made of 3 components:&lt;/p>
+&lt;ol>
+&lt;li>Popup panel&lt;/li>
+&lt;li>Text&lt;/li>
+&lt;li>Button&lt;/li>
+&lt;/ol>
+&lt;p>To create the animation in Godot let&amp;rsquo;s consider this basic Hierarchy:&lt;/p>
+&lt;p>
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+ &lt;img src="https://anima.ceceppa.me/images/tutorials/node-popup.png" alt="Popup example hierarchy" width="443" height="119" loading="lazy">
+ 
+ 
+&lt;/p></description></item><item><title>02: Popup Animation (Sequential animation)</title><link>https://anima.ceceppa.me/docs/tutorials/02-popup-animation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://anima.ceceppa.me/docs/tutorials/02-popup-animation/</guid><description>&lt;p>Let&amp;rsquo;s implement the following animation:&lt;/p>
+&lt;video controls preload="auto" width="100%" playsinline class="html-video">
+ &lt;source src="https://anima.ceceppa.me/docs/popup.webm" type="video/webm">
+&lt;/video>
+
+
+
+
+&lt;p>As we can see the animation is made of 3 components:&lt;/p>
+&lt;ol>
+&lt;li>Popup panel&lt;/li>
+&lt;li>Text&lt;/li>
+&lt;li>Button&lt;/li>
+&lt;/ol>
+&lt;p>To create the animation in Godot let&amp;rsquo;s consider this basic Hierarchy:&lt;/p>
+&lt;p>
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+ &lt;img src="https://anima.ceceppa.me/images/tutorials/node-popup.png" alt="Popup example hierarchy" width="443" height="119" loading="lazy">
+ 
+ 
+&lt;/p></description></item></channel></rss>
